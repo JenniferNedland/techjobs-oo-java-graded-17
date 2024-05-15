@@ -2,9 +2,11 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
+import static java.lang.System.lineSeparator;
+
 public class Job {
 
-    private int id;
+    private final int id;
     private static int nextId = 1;
 
     private String name;
@@ -29,6 +31,39 @@ public class Job {
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
+    }
+
+    @Override
+    public String toString() {
+        String unavailable = "Data not available";
+
+        if(Objects.equals(name, "") || name == null) {
+            name = unavailable;
+        }
+        if(Objects.equals(employer.getValue(), "") || employer == null) {
+            employer.setValue(unavailable);
+        }
+        if(Objects.equals(location.getValue(), "") || location == null) {
+            location.setValue(unavailable);
+        }
+        if(Objects.equals(positionType.getValue(), "") || positionType == null) {
+            positionType.setValue(unavailable);
+        }
+        if(Objects.equals(coreCompetency.getValue(), "") || coreCompetency == null) {
+            coreCompetency.setValue(unavailable);
+        }
+
+        return
+                """
+               
+                ID: %s
+                Name: %s
+                Employer: %s
+                Location: %s
+                Position Type: %s
+                Core Competency: %s
+                
+                """.formatted(id, name, employer, location, positionType, coreCompetency);
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
