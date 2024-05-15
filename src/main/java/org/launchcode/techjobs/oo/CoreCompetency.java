@@ -5,6 +5,19 @@ import java.util.Objects;
 public class CoreCompetency {
 
     private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
     private static int nextId = 1;
     private String value;
 
