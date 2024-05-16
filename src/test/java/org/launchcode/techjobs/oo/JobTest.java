@@ -49,8 +49,8 @@ public class JobTest {
 
         String firstChar = String.valueOf(job_0.toString().charAt(0));
         String lastChar = String.valueOf(job_0.toString().charAt(job_0.toString().length()-1));
-        assertEquals(firstChar, "\n");
-        assertEquals(lastChar, "\n");
+        assertEquals("\n", firstChar);
+        assertEquals("\n", lastChar);
     }
 
     @Test
