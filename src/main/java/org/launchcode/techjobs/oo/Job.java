@@ -34,15 +34,15 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
+    private String formatString(String string) {
+        return string == null || string.isEmpty() ? "Data not available" : string;
+    }
+    private String formatField(JobField field) {
+        return formatString(field == null ? "" : field.getValue());
+    }
+
     @Override
     public String toString() {
-        String unavailable = "Data not available";
-
-        String nameString = name == null ? unavailable : name;
-        String employerString = employer == null ? unavailable : employer.getValue();
-        String locationString = location == null ? unavailable : location.getValue();
-        String positionTypeString = positionType == null ? unavailable : positionType.getValue();
-        String coreCompetencyString = coreCompetency == null ? unavailable : coreCompetency.getValue();
 
         return
                 """
@@ -53,7 +53,12 @@ public class Job {
                 Location: %s
                 Position Type: %s
                 Core Competency: %s
-                """.formatted(id, nameString, employerString, locationString, positionTypeString, coreCompetencyString);
+                """.formatted(id,
+                        formatString(name),
+                        formatField(employer),
+                        formatField(location),
+                        formatField(positionType),
+                        formatField(coreCompetency));
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
