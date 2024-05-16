@@ -1,6 +1,7 @@
 package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
+import java.util.Optional;
 
 import static java.lang.System.lineSeparator;
 
@@ -37,33 +38,22 @@ public class Job {
     public String toString() {
         String unavailable = "Data not available";
 
-        if(Objects.equals(name, "") || name == null) {
-            name = unavailable;
-        }
-        if(Objects.equals(employer.getValue(), "") || employer == null) {
-            employer.setValue(unavailable);
-        }
-        if(Objects.equals(location.getValue(), "") || location == null) {
-            location.setValue(unavailable);
-        }
-        if(Objects.equals(positionType.getValue(), "") || positionType == null) {
-            positionType.setValue(unavailable);
-        }
-        if(Objects.equals(coreCompetency.getValue(), "") || coreCompetency == null) {
-            coreCompetency.setValue(unavailable);
-        }
+        String nameString = name == null ? unavailable : name;
+        String employerString = employer == null ? unavailable : employer.getValue();
+        String locationString = location == null ? unavailable : location.getValue();
+        String positionTypeString = positionType == null ? unavailable : positionType.getValue();
+        String coreCompetencyString = coreCompetency == null ? unavailable : coreCompetency.getValue();
 
         return
                 """
-               
+                
                 ID: %s
                 Name: %s
                 Employer: %s
                 Location: %s
                 Position Type: %s
                 Core Competency: %s
-                
-                """.formatted(id, name, employer, location, positionType, coreCompetency);
+                """.formatted(id, nameString, employerString, locationString, positionTypeString, coreCompetencyString);
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields

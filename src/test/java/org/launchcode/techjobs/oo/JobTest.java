@@ -66,10 +66,14 @@ public class JobTest {
                 Location: %s
                 Position Type: %s
                 Core Competency: %s
-                
                 """.formatted(job_seven.getId(), job_seven.getName(), job_seven.getEmployer(),
                         job_seven.getLocation(), job_seven.getPositionType(), job_seven.getCoreCompetency());
 
         assertEquals(output, job_seven.toString());
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField() {
+
     }
 }

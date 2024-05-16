@@ -52,7 +52,7 @@
       <recent name="org.launchcode.techjobs.oo" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.JobTest.testToStringStartsAndEndsWithNewLine">
+  <component name="RunManager" selected="Gradle.Tests in 'techjobs-oo-java17-graded.test'">
     <configuration name="JobTest.testJobConstructorSetsAllFields" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -188,10 +188,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.JobTest.testToStringStartsAndEndsWithNewLine" />
-        <item itemvalue="Gradle.TestTaskFive.testToStringStartsAndEndsWithNewLine" />
         <item itemvalue="Gradle.Tests in 'techjobs-oo-java17-graded.test'" />
+        <item itemvalue="Gradle.TestTaskFive.testToStringStartsAndEndsWithNewLine" />
         <item itemvalue="Gradle.JobTest.testToStringContainsCorrectLabelsAndData" />
+        <item itemvalue="Gradle.JobTest.testToStringStartsAndEndsWithNewLine" />
         <item itemvalue="Gradle.JobTest.testJobConstructorSetsAllFields" />
       </list>
     </recent_temporary>
